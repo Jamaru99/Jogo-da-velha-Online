@@ -1,7 +1,6 @@
 class JogoDaVelha{
 
     constructor(response){
-        //this.tabuleiro = ['', '', '', '', '', '', '', '', ''];
         this.tabuleiro = response.data[0].tabuleiro;
         this.simbolo = response.data[0].simbolo;
         this.elementoContainer = document.querySelector('.game');
@@ -20,9 +19,6 @@ class JogoDaVelha{
     }
 
     inicia() {
-        //let dadosAPI = await api.get('/');
-        //this.tabuleiro = response;
-        //console.log(response);
         this.desenha();
         this.gameOver = false;       
     }
@@ -46,7 +42,6 @@ class JogoDaVelha{
     }
 
     fazerJogada(posicao){
-        console.log(posicao);
         if (this.gameOver) return false;
         if (this.tabuleiro[posicao] === ''){
             this.tabuleiro[posicao] = this.simbolo;
